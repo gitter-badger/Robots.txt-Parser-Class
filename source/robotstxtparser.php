@@ -21,6 +21,8 @@
  */
 class RobotsTxtParser
 {
+    use vipnytt;
+    
     // default encoding
     const DEFAULT_ENCODING = 'UTF-8';
 
