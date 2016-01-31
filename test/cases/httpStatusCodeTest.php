@@ -14,12 +14,13 @@ class httpStatusCodeTest extends \PHPUnit_Framework_TestCase
 		$parser->setHttpStatusCode(200);
 		$this->assertTrue($parser->isAllowed("/"));
 		$this->assertFalse($parser->isDisallowed("/"));
+		$this->assertEquals(200, $parser->getDetails()['http status code']);
 		$this->assertContains('Rule match: Path', $parser->getLog());
 		$parser->setHttpStatusCode(503);
 		$this->assertTrue($parser->isDisallowed("/"));
 		$this->assertFalse($parser->isAllowed("/"));
 		$this->assertContains('Disallowed by HTTP status code 5xx', $parser->getLog());
-		$this->assertEquals(200, $parser->getDetails()['http status code']);
+		$this->assertEquals(503, $parser->getDetails()['http status code']);
 	}
 
 	/**
