@@ -10,7 +10,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
-        "vipnytt/cleanparam-url-filter": "=0.*"
+        "vipnytt/cleanparam-url-filter": "0.*"
     },
     "require-dev": {
         "phpunit/phpunit": ">=3.7",
