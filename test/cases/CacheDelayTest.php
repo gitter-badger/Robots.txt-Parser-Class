@@ -15,6 +15,7 @@ class CacheDelayTest extends \PHPUnit_Framework_TestCase
 		$this->assertContains('cache-delay directive (unofficial): Not found, fallback to crawl-delay directive', $parser->getLog());
 		$this->assertEquals(3.7, $parser->getDelay('GoogleBot', 'cache-delay'));
 		$this->assertEquals(8, $parser->getDelay('AhrefsBot', 'cache-delay'));
+		$this->assertEquals(8, $parser->getDetails('AhrefsBot')['cache-delay']);
 	}
 
 	/**

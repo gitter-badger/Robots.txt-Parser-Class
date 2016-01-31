@@ -1035,6 +1035,7 @@ class RobotsTxtParser
         $array[self::DIRECTIVE_HOST] = $this->getHost();
         $array[self::DIRECTIVE_CLEAN_PARAM] = $this->getCleanParam();
         $array[self::DIRECTIVE_SITEMAP] = $this->getSitemaps();
+        $array['http status code'] = $this->httpStatusCode;
         return $array;
     }
 

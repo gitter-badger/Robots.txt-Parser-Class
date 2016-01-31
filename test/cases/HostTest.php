@@ -18,6 +18,7 @@ class HostTest extends \PHPUnit_Framework_TestCase
 		$this->assertTrue($parser->isAllowed("http://myhost.ru/"));
 		$this->assertFalse($parser->isDisallowed("http://myhost.ru/"));
 		$this->assertEquals('myhost.ru', $parser->getHost());
+		$this->assertEquals('myhost.ru', $parser->getDetails()['host']);
 	}
 
 	/**

@@ -14,6 +14,7 @@
 			$this->assertContains('crawl-delay directive: Not found', $parser->getLog());
 			$this->assertEquals(0.9, $parser->getDelay('GoogleBot'));
 			$this->assertEquals(1.5, $parser->getDelay('AhrefsBot'));
+			$this->assertEquals(0.9, $parser->getDetails('GoogleBot')['crawl-delay']);
 		}
 
 		/**

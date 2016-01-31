@@ -19,6 +19,7 @@ class httpStatusCodeTest extends \PHPUnit_Framework_TestCase
 		$this->assertTrue($parser->isDisallowed("/"));
 		$this->assertFalse($parser->isAllowed("/"));
 		$this->assertContains('Disallowed by HTTP status code 5xx', $parser->getLog());
+		$this->assertEquals(200, $parser->getDetails()['http status code']);
 	}
 
 	/**
