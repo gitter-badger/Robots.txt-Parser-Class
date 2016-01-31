@@ -11,4 +11,6 @@ before_install:
 install:
   - composer install
 after_script:
-  - CODECLIMATE_REPO_TOKEN=badc29b931533dd8efb832ffff7bf8dbc31486290ae3b1c81d38fa677795ffaf ./vendor/bin/test-reporter
+# master-token for `t1gor` repo  - CODECLIMATE_REPO_TOKEN=badc29b931533dd8efb832ffff7bf8dbc31486290ae3b1c81d38fa677795ffaf ./vendor/bin/test-reporter
+# Replaced with token for `janpettermg` repo, while developing...
+  - CODECLIMATE_REPO_TOKEN=33e3385f09ec27299eb23d2ebf8c785d9137b205c017553a7e05db3eba8b99c7 ./vendor/bin/test-reporter
