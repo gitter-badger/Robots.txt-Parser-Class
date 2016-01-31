@@ -78,7 +78,7 @@ class RobotsTxtParser
 
     // internally used variables
     private $state = "";
-    private $url = null;
+    private $url = "";
     private $userAgent = '*';
     private $userAgent_groups = array('*');
     private $userAgent_match = '*';
@@ -109,8 +109,6 @@ class RobotsTxtParser
         // parse rules - default state
         $this->prepareRules();
     }
-
-    // signals
 
     /**
      * Parse rules
