@@ -1033,9 +1033,9 @@ class RobotsTxtParser
             $array[self::DIRECTIVE_CACHE_DELAY] = $this->getDelay($this->userAgent_match, self::DIRECTIVE_CACHE_DELAY);
         }
         $array[self::DIRECTIVE_HOST] = $this->getHost();
-        $array[self::DIRECTIVE_CLEAN_PARAM] = $this->getCleanParam();
         $array[self::DIRECTIVE_SITEMAP] = $this->getSitemaps();
-        $array['http status code'] = $this->httpStatusCode;
+        $array[self::DIRECTIVE_CLEAN_PARAM] = $this->getCleanParam();
+        $array['http-status-code'] = $this->httpStatusCode;
         return $array;
     }
 
@@ -1054,19 +1054,6 @@ class RobotsTxtParser
     }
 
     /**
-     * Get Clean-Param
-     *
-     * @return array
-     */
-    public function getCleanParam()
-    {
-        if (empty($this->cleanparam)) {
-            $this->log[] = self::DIRECTIVE_CLEAN_PARAM . ' directive: Not found';
-        }
-        return $this->cleanparam;
-    }
-
-    /**
      * Get sitemaps wrapper
      *
      * @return array
@@ -1077,6 +1064,19 @@ class RobotsTxtParser
             $this->log[] = self::DIRECTIVE_SITEMAP . ' directive: No sitemaps found';
         }
         return $this->sitemap;
+    }
+
+    /**
+     * Get Clean-Param
+     *
+     * @return array
+     */
+    public function getCleanParam()
+    {
+        if (empty($this->cleanparam)) {
+            $this->log[] = self::DIRECTIVE_CLEAN_PARAM . ' directive: Not found';
+        }
+        return $this->cleanparam;
     }
 
     /**
