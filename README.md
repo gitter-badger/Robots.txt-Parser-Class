@@ -5,7 +5,7 @@ Robots.txt php parser class
 
 PHP class to parse robots.txt rules according to Google, Yandex, W3C and The Web Robots Pages specifications.
 
-Full list of supported specifications (and what's not supported, yet) are available in our [Wiki](https://github.com/t1gor/Robots.txt-Parser-Class/wiki/Specifications).
+Full list of supported specifications are available in our [Wiki](https://github.com/t1gor/Robots.txt-Parser-Class/wiki/Specifications).
 
 ### Installation
 The library is available for install via Composer package. To install via Composer, please add the requirement to your `composer.json` file, like this:
@@ -22,8 +22,8 @@ and then use composer to load the lib:
 
 ```php
 <?php
-    require 'vendor/autoload.php';
-    $parser = new RobotsTxtParser(file_get_contents('http://example.com/robots.txt'));
+require 'vendor/autoload.php';
+$parser = new RobotsTxtParser(file_get_contents('http://example.com/robots.txt'));
     ...
 ```
 

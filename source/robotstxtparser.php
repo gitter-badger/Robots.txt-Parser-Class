@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Class for parsing robots.txt files
  *
@@ -19,6 +18,7 @@
  * @link http://www.the-art-of-web.com/php/parse-robots/
  * @link http://socoder.net/index.php?snippet=23824
  */
+
 use vipnytt\CleanParamFilter;
 
 class RobotsTxtParser
@@ -629,7 +629,9 @@ class RobotsTxtParser
     public function setUserAgent($userAgent)
     {
         $this->userAgent = mb_strtolower(trim($userAgent));
-        if (empty($this->userAgent)) {
+        if (is_null($userAgent) && isset($this->userAgent)) {
+            return;
+        } elseif (empty($this->userAgent)) {
             $this->userAgent = '*';
         }
         $this->explodeUserAgent();
