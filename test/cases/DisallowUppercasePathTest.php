@@ -1,10 +1,11 @@
 <?php
+
 class DisallowUppercasePathTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider generateDataForTest
-     * @covers RobotsTxtParser::isDisallowed
-     * @covers RobotsTxtParser::checkRules
+     * @covers       RobotsTxtParser::isDisallowed
+     * @covers       RobotsTxtParser::checkRules
      * @param string $robotsTxtContent
      */
     public function testDisallowUppercasePath($robotsTxtContent)
@@ -13,7 +14,7 @@ class DisallowUppercasePathTest extends \PHPUnit_Framework_TestCase
         $parser = new RobotsTxtParser($robotsTxtContent);
         $this->assertInstanceOf('RobotsTxtParser', $parser);
         $this->assertTrue($parser->isDisallowed("/Admin"));
-		$this->assertFalse($parser->isAllowed("/Admin"));
+        $this->assertFalse($parser->isAllowed("/Admin"));
     }
 
     /**
@@ -23,10 +24,11 @@ class DisallowUppercasePathTest extends \PHPUnit_Framework_TestCase
     public function generateDataForTest()
     {
         return array(
-            array("
-					User-agent: *
-					Disallow : /Admin
-				")
+            array(<<<ROBOTS
+User-agent: *
+Disallow : /Admin
+ROBOTS
+            )
         );
     }
 }

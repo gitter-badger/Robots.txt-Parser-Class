@@ -11,10 +11,11 @@ class UnlistedPath extends \PHPUnit_Framework_TestCase
     public function testAllowUnlistedPath()
     {
         // init parser
-        $parser = new RobotsTxtParser("
-			User-Agent: *
-			Disallow: /admin/
-		");
+        $parser = new RobotsTxtParser(<<<ROBOTS
+User-Agent: *
+Disallow: /admin/
+ROBOTS
+        );
         $this->assertInstanceOf('RobotsTxtParser', $parser);
         // asserts
         $this->assertTrue($parser->isAllowed("/"));

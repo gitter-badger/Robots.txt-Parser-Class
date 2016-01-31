@@ -2,33 +2,33 @@
 
 class HostTest extends \PHPUnit_Framework_TestCase
 {
-	/**
-	 * @dataProvider generateDataForTest
-	 * @covers       RobotsTxtParser::getHost
-	 * @covers       RobotsTxtParser::checkRules
-	 * @param string $robotsTxtContent
-	 */
-	public function testHost($robotsTxtContent)
-	{
-		// init parser
-		$parser = new RobotsTxtParser($robotsTxtContent);
-		$this->assertInstanceOf('RobotsTxtParser', $parser);
-		$this->assertTrue($parser->isDisallowed("http://www.myhost.ru/"));
-		$this->assertFalse($parser->isAllowed("http://www.myhost.ru/"));
-		$this->assertTrue($parser->isAllowed("http://myhost.ru/"));
-		$this->assertFalse($parser->isDisallowed("http://myhost.ru/"));
-		$this->assertEquals('myhost.ru', $parser->getHost());
-		$this->assertEquals('myhost.ru', $parser->getDetails()['host']);
-	}
+    /**
+     * @dataProvider generateDataForTest
+     * @covers       RobotsTxtParser::getHost
+     * @covers       RobotsTxtParser::checkRules
+     * @param string $robotsTxtContent
+     */
+    public function testHost($robotsTxtContent)
+    {
+        // init parser
+        $parser = new RobotsTxtParser($robotsTxtContent);
+        $this->assertInstanceOf('RobotsTxtParser', $parser);
+        $this->assertTrue($parser->isDisallowed("http://www.myhost.ru/"));
+        $this->assertFalse($parser->isAllowed("http://www.myhost.ru/"));
+        $this->assertTrue($parser->isAllowed("http://myhost.ru/"));
+        $this->assertFalse($parser->isDisallowed("http://myhost.ru/"));
+        $this->assertEquals('myhost.ru', $parser->getHost());
+        $this->assertEquals('myhost.ru', $parser->getDetails()['host']);
+    }
 
-	/**
-	 * Generate test case data
-	 * @return array
-	 */
-	public function generateDataForTest()
-	{
-		return array(
-			array(<<<ROBOTS
+    /**
+     * Generate test case data
+     * @return array
+     */
+    public function generateDataForTest()
+    {
+        return array(
+            array(<<<ROBOTS
 User-agent: *
 Disallow: /cgi-bin
 Disallow: Host: www.myhost.ru
@@ -55,7 +55,7 @@ Host: www.firsthost.ru www.secondhost.com
 Host: myhost.ru # uses this one
 Host: www.myhost.ru # is not used
 ROBOTS
-			)
-		);
-	}
+            )
+        );
+    }
 }
