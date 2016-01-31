@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Class for parsing robots.txt files
  *
@@ -18,9 +19,6 @@
  * @link http://www.the-art-of-web.com/php/parse-robots/
  * @link http://socoder.net/index.php?snippet=23824
  */
-
-use vipnytt\CleanParamFilter;
-
 class RobotsTxtParser
 {
     // default encoding
@@ -724,7 +722,7 @@ class RobotsTxtParser
      */
     protected function findDuplicates()
     {
-        $filter = new CleanParamFilter($this->urls);
+        $filter = new vipnytt\CleanParamFilter($this->urls);
         foreach ($this->cleanparam as $path => $param) {
             $filter->addCleanParam($param, $path);
         }
