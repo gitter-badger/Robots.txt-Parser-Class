@@ -19,10 +19,10 @@
  * @link http://www.the-art-of-web.com/php/parse-robots/
  * @link http://socoder.net/index.php?snippet=23824
  */
+use vipnytt\CleanParamFilter;
+
 class RobotsTxtParser
 {
-    use vipnytt;
-    
     // default encoding
     const DEFAULT_ENCODING = 'UTF-8';
 
@@ -724,11 +724,13 @@ class RobotsTxtParser
      */
     protected function findDuplicates()
     {
-        $filter = new vipnytt\CleanParamFilter($this->urls);
-        foreach ($this->cleanparam as $path => $param) {
-            $filter->addCleanParam($param, $path);
+        $filter = new CleanParamFilter($this->urls);
+        foreach ($this->cleanparam as $path => $paramArray) {
+            foreach ($paramArray as $param) {
+                $filter->addCleanParam($param, $path);
+            }
         }
-        return $filter->listApproved();
+        return $filter->listDuplicate();
     }
 
     /**
