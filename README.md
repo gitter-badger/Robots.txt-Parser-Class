@@ -1,6 +1,8 @@
 Robots.txt php parser class
 =====================
 
+[![Join the chat at https://gitter.im/JanPetterMG/Robots.txt-Parser-Class](https://badges.gitter.im/JanPetterMG/Robots.txt-Parser-Class.svg)](https://gitter.im/JanPetterMG/Robots.txt-Parser-Class?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/t1gor/Robots.txt-Parser-Class.svg?branch=master)](https://travis-ci.org/t1gor/Robots.txt-Parser-Class) [![Code Climate](https://codeclimate.com/github/t1gor/Robots.txt-Parser-Class/badges/gpa.svg)](https://codeclimate.com/github/t1gor/Robots.txt-Parser-Class) [![Test Coverage](https://codeclimate.com/github/t1gor/Robots.txt-Parser-Class/badges/coverage.svg)](https://codeclimate.com/github/t1gor/Robots.txt-Parser-Class) [![License](https://poser.pugx.org/t1gor/robots-txt-parser/license.svg)](https://packagist.org/packages/t1gor/robots-txt-parser) [![Total Downloads](https://poser.pugx.org/t1gor/robots-txt-parser/downloads.svg)](https://packagist.org/packages/t1gor/robots-txt-parser)
 
 PHP class to parse robots.txt rules according to Google, Yandex, W3C and The Web Robots Pages specifications.
